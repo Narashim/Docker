@@ -1,0 +1,47 @@
+version: "3.7"
+
+services:
+
+  db:
+      image: mariadb:10
+      container_name: wpgains-demo-db
+      restart: always
+      volumes:
+        - db_data:/var/lib/mysql
+        - ./backups:/backups
+      environment:
+        MYSQL_DATABASE: "${MYSQL_DATABASE}"
+        MYSQL_DATABASE: "${MYSQL_DATABASE}"
+        MYSQL_PASSWORD: "${MYSQL_PASSWORD}"
+        MYSQL_ALLOW_EMPTY_PASSWORD: "${MYSQL_ALLOW_EMPTY_PASSWORD}"
+        MYSQL_ROOT_PASSWORD: "${MYSQL_ROOT_PASSWORD}"
+      
+  wordpress:
+        image: wordpress:latest
+        container_name: wpgains-demo-app
+        restart: always
+        depends_on: ['db']
+        ports: ['80:80']
+        links: ['db:db']
+        volumes:
+          - './wp-data:/var/www/html'
+        environment:
+          WORDPRESS_DB_HOST: "${WORDPRESS_DB_HOST}"
+          WORDPRESS_DB_NAME: "${WORDPRESS_DB_NAME}"
+          WORDPRESS_DB_USER: "${WORDPRESS_DB_USER}"
+          WORDPRESS_DB_PASSWORD: "${WORDPRESS_DB_PASSWORD}"
+
+  phpmyadmin:
+        image: phpmyadmin/phpmyadmin:4.7
+        container_name:  wpgains-demo-phpmyadmin
+        restart: always       
+        depends_on: ['db']
+        ports: ['12000:80']
+        links: ['db:db']
+        environment:
+          PHP_HOST: "${PHP_HOST}"
+          PHP_USER: "${PHP_USER}"
+          PHP_PASSWORD: "${PHP_PASSWORD}"
+
+volumes:
+  db_data: {}

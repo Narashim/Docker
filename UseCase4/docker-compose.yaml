@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+    webserver:
+      build: C:\working\docker\UseCase4
+      image: "dockercompose/apache2:1.0"
+      container_name: apache2
+      ports:
+          - "3308:80"
+

@@ -1,0 +1,622 @@
+
+C:\working\docker\UseCase2>docker ps
+CONTAINER ID   IMAGE                       COMMAND                  CREATED              STATUS              PORTS                             NAMESbf2f62a04520   phpmyadmin/phpmyadmin:4.7   "/run.sh phpmyadmin"     About a minute ago   Up About a minute   9000/tcp, 0.0.0.0:12000->80/tcp   wpgains-demo-phpmyadmin
+26fba1ad21ef   wordpress:latest            "docker-entrypoint.s…"   About a minute ago   Up About a minute   0.0.0.0:80->80/tcp                wpgains-demo-app
+597cf511b7d8   mariadb:10                  "docker-entrypoint.s…"   About a minute ago   Up About a minute   3306/tcp                          wpgains-demo-db
+
+C:\working\docker\UseCase2>docker logs 26fba1ad21ef
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.21.0.3. Set the 'ServerName' directive globally to suppress this message
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.21.0.3. Set the 'ServerName' directive globally to suppress this message
+[Sat Jul 02 11:25:40.409707 2022] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.53 (Debian) PHP/7.4.30 configured -- resuming normal operations
+[Sat Jul 02 11:25:40.409774 2022] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+172.21.0.1 - - [02/Jul/2022:11:26:31 +0000] "GET / HTTP/1.1" 500 2834 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.53 Safari/537.36 Edg/103.0.1264.37"
+172.21.0.1 - - [02/Jul/2022:11:26:32 +0000] "GET /favicon.ico HTTP/1.1" 500 2834 "http://localhost/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.53 Safari/537.36 Edg/103.0.1264.37"
+172.21.0.1 - - [02/Jul/2022:11:26:35 +0000] "GET / HTTP/1.1" 500 2834 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.53 Safari/537.36 Edg/103.0.1264.37"
+172.21.0.1 - - [02/Jul/2022:11:26:35 +0000] "GET /favicon.ico HTTP/1.1" 500 2834 "http://localhost/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.53 Safari/537.36 Edg/103.0.1264.37"
+172.21.0.1 - - [02/Jul/2022:11:26:36 +0000] "GET / HTTP/1.1" 500 2834 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.53 Safari/537.36 Edg/103.0.1264.37"
+172.21.0.1 - - [02/Jul/2022:11:26:36 +0000] "GET /favicon.ico HTTP/1.1" 500 2834 "http://localhost/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.53 Safari/537.36 Edg/103.0.1264.37"
+172.21.0.1 - - [02/Jul/2022:11:26:36 +0000] "GET / HTTP/1.1" 500 2834 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.53 Safari/537.36 Edg/103.0.1264.37"
+172.21.0.1 - - [02/Jul/2022:11:26:36 +0000] "GET /favicon.ico HTTP/1.1" 500 2834 "http://localhost/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.53 Safari/537.36 Edg/103.0.1264.37"
+172.21.0.1 - - [02/Jul/2022:11:26:37 +0000] "GET / HTTP/1.1" 500 2834 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.53 Safari/537.36 Edg/103.0.1264.37"
+172.21.0.1 - - [02/Jul/2022:11:26:37 +0000] "GET /favicon.ico HTTP/1.1" 500 2834 "http://localhost/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.53 Safari/537.36 Edg/103.0.1264.37"
+172.21.0.1 - - [02/Jul/2022:11:26:37 +0000] "GET / HTTP/1.1" 500 2834 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.53 Safari/537.36 Edg/103.0.1264.37"
+172.21.0.1 - - [02/Jul/2022:11:26:37 +0000] "GET /favicon.ico HTTP/1.1" 500 2834 "http://localhost/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.53 Safari/537.36 Edg/103.0.1264.37"
+172.21.0.1 - - [02/Jul/2022:11:26:37 +0000] "GET / HTTP/1.1" 500 2834 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.53 Safari/537.36 Edg/103.0.1264.37"
+172.21.0.1 - - [02/Jul/2022:11:26:37 +0000] "GET /favicon.ico HTTP/1.1" 500 2834 "http://localhost/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.53 Safari/537.36 Edg/103.0.1264.37"
+172.21.0.1 - - [02/Jul/2022:11:26:37 +0000] "GET / HTTP/1.1" 500 2834 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.53 Safari/537.36 Edg/103.0.1264.37"
+172.21.0.1 - - [02/Jul/2022:11:26:37 +0000] "GET /favicon.ico HTTP/1.1" 500 2834 "http://localhost/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.53 Safari/537.36 Edg/103.0.1264.37"
+172.21.0.1 - - [02/Jul/2022:11:26:38 +0000] "GET / HTTP/1.1" 500 2834 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.53 Safari/537.36 Edg/103.0.1264.37"
+172.21.0.1 - - [02/Jul/2022:11:26:38 +0000] "GET /favicon.ico HTTP/1.1" 500 2834 "http://localhost/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.53 Safari/537.36 Edg/103.0.1264.37"
+172.21.0.1 - - [02/Jul/2022:11:26:38 +0000] "GET / HTTP/1.1" 500 2834 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.53 Safari/537.36 Edg/103.0.1264.37"
+172.21.0.1 - - [02/Jul/2022:11:26:38 +0000] "GET /favicon.ico HTTP/1.1" 500 2834 "http://localhost/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.53 Safari/537.36 Edg/103.0.1264.37"
+172.21.0.1 - - [02/Jul/2022:11:26:38 +0000] "GET / HTTP/1.1" 500 2834 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.53 Safari/537.36 Edg/103.0.1264.37"
+172.21.0.1 - - [02/Jul/2022:11:26:38 +0000] "GET /favicon.ico HTTP/1.1" 500 2834 "http://localhost/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.53 Safari/537.36 Edg/103.0.1264.37"
+172.21.0.1 - - [02/Jul/2022:11:26:38 +0000] "GET / HTTP/1.1" 500 2834 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.53 Safari/537.36 Edg/103.0.1264.37"
+172.21.0.1 - - [02/Jul/2022:11:26:38 +0000] "GET /favicon.ico HTTP/1.1" 500 2834 "http://localhost/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.53 Safari/537.36 Edg/103.0.1264.37"
+172.21.0.1 - - [02/Jul/2022:11:26:38 +0000] "GET / HTTP/1.1" 500 2834 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.53 Safari/537.36 Edg/103.0.1264.37"
+172.21.0.1 - - [02/Jul/2022:11:26:38 +0000] "GET /favicon.ico HTTP/1.1" 500 2834 "http://localhost/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.53 Safari/537.36 Edg/103.0.1264.37"
+172.21.0.1 - - [02/Jul/2022:11:26:38 +0000] "GET / HTTP/1.1" 500 2834 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.53 Safari/537.36 Edg/103.0.1264.37"
+172.21.0.1 - - [02/Jul/2022:11:26:38 +0000] "GET /favicon.ico HTTP/1.1" 500 2834 "http://localhost/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.53 Safari/537.36 Edg/103.0.1264.37"
+172.21.0.1 - - [02/Jul/2022:11:26:39 +0000] "GET / HTTP/1.1" 500 2834 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.53 Safari/537.36 Edg/103.0.1264.37"
+172.21.0.1 - - [02/Jul/2022:11:26:39 +0000] "GET /favicon.ico HTTP/1.1" 500 2834 "http://localhost/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.53 Safari/537.36 Edg/103.0.1264.37"
+172.21.0.1 - - [02/Jul/2022:11:27:33 +0000] "-" 408 0 "-" "-"
+
+C:\working\docker\UseCase2>
+C:\working\docker\UseCase2>
+C:\working\docker\UseCase2>docker ps
+CONTAINER ID   IMAGE                       COMMAND                  CREATED         STATUS         PORTS                             NAMES
+bf2f62a04520   phpmyadmin/phpmyadmin:4.7   "/run.sh phpmyadmin"     7 minutes ago   Up 7 minutes   9000/tcp, 0.0.0.0:12000->80/tcp   wpgains-demo-phpmyadmin
+26fba1ad21ef   wordpress:latest            "docker-entrypoint.s…"   7 minutes ago   Up 7 minutes   0.0.0.0:80->80/tcp                wpgains-demo-app
+597cf511b7d8   mariadb:10                  "docker-entrypoint.s…"   7 minutes ago   Up 7 minutes   3306/tcp                          wpgains-demo-db
+C:\working\docker\UseCase2>docker -it exec bin/bash
+unknown shorthand flag: 'i' in -it
+See 'docker --help'.
+
+Usage:  docker [OPTIONS] COMMAND
+
+A self-sufficient runtime for containers
+
+Options:
+      --config string      Location of client config files (default
+                           "C:\\Users\\naras\\.docker")
+  -c, --context string     Name of the context to use to connect to the
+                           daemon (overrides DOCKER_HOST env var and
+                           default context set with "docker context use")
+  -D, --debug              Enable debug mode
+  -H, --host list          Daemon socket(s) to connect to
+  -l, --log-level string   Set the logging level
+                           ("debug"|"info"|"warn"|"error"|"fatal")
+                           (default "info")
+      --tls                Use TLS; implied by --tlsverify
+      --tlscacert string   Trust certs signed only by this CA (default
+                           "C:\\Users\\naras\\.docker\\ca.pem")
+      --tlscert string     Path to TLS certificate file (default
+                           "C:\\Users\\naras\\.docker\\cert.pem")
+      --tlskey string      Path to TLS key file (default
+                           "C:\\Users\\naras\\.docker\\key.pem")
+      --tlsverify          Use TLS and verify the remote
+  -v, --version            Print version information and quit
+
+Management Commands:
+  builder     Manage builds
+  buildx*     Docker Buildx (Docker Inc., v0.8.2)
+  compose*    Docker Compose (Docker Inc., v2.5.0)
+  config      Manage Docker configs
+  container   Manage containers
+  context     Manage contexts
+  image       Manage images
+  manifest    Manage Docker image manifests and manifest lists
+  network     Manage networks
+  node        Manage Swarm nodes
+  plugin      Manage plugins
+  sbom*       View the packaged-based Software Bill Of Materials (SBOM) for an image (Anchore Inc., 0.6.0)
+  scan*       Docker Scan (Docker Inc., v0.17.0)
+  secret      Manage Docker secrets
+  service     Manage services
+  stack       Manage Docker stacks
+  swarm       Manage Swarm
+  system      Manage Docker
+  trust       Manage trust on Docker images
+  volume      Manage volumes
+
+Commands:
+  attach      Attach local standard input, output, and error streams to a running container
+  build       Build an image from a Dockerfile
+  commit      Create a new image from a container's changes
+  cp          Copy files/folders between a container and the local filesystem
+  create      Create a new container
+  diff        Inspect changes to files or directories on a container's filesystem
+  events      Get real time events from the server
+  exec        Run a command in a running container
+  export      Export a container's filesystem as a tar archive
+  history     Show the history of an image
+  images      List images
+  import      Import the contents from a tarball to create a filesystem image
+  info        Display system-wide information
+  inspect     Return low-level information on Docker objects
+  kill        Kill one or more running containers
+  load        Load an image from a tar archive or STDIN
+  login       Log in to a Docker registry
+  logout      Log out from a Docker registry
+  logs        Fetch the logs of a container
+  pause       Pause all processes within one or more containers
+  port        List port mappings or a specific mapping for the container
+  ps          List containers
+  pull        Pull an image or a repository from a registry
+  push        Push an image or a repository to a registry
+  rename      Rename a container
+  restart     Restart one or more containers
+  rm          Remove one or more containers
+  rmi         Remove one or more images
+  run         Run a command in a new container
+  save        Save one or more images to a tar archive (streamed to STDOUT by default)
+  search      Search the Docker Hub for images
+  start       Start one or more stopped containers
+  stats       Display a live stream of container(s) resource usage statistics
+  stop        Stop one or more running containers
+  tag         Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
+  top         Display the running processes of a container
+  unpause     Unpause all processes within one or more containers
+  update      Update configuration of one or more containers
+  version     Show the Docker version information
+  wait        Block until one or more containers stop, then print their exit codes
+
+Run 'docker COMMAND --help' for more information on a command.
+
+To get more help with docker, check out our guides at https://docs.docker.com/go/guides/
+
+
+C:\working\docker\UseCase2>cd ..
+
+C:\working\docker>cd UseCase3
+
+C:\working\docker\UseCase3>
+C:\working\docker\UseCase3>
+C:\working\docker\UseCase3>
+C:\working\docker\UseCase3>dir
+ Volume in drive C is OS
+ Volume Serial Number is A2AD-EB3A
+
+ Directory of C:\working\docker\UseCase3
+
+02-07-2022  12:35 PM    <DIR>          .
+02-07-2022  12:35 PM    <DIR>          ..
+02-07-2022  12:25 PM               327 .env
+02-07-2022  12:24 PM             1,369 docker-compose.yml
+02-07-2022  12:05 PM           246,540 Use Case 1.docx
+               3 File(s)        248,236 bytes
+               2 Dir(s)  133,900,906,496 bytes free
+
+C:\working\docker\UseCase3>code .
+
+C:\working\docker\UseCase3>docker-compose up -d \
+Traceback (most recent call last):
+  File "docker-compose", line 2, in <module>
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "c:\jenkins\workspace\dsg_compose_1.29.2\venv\lib\site-packages\PyInstaller\loader\pyimod03_importers.py", line 493, in exec_module
+  File "compose\cli\main.py", line 13, in <module>
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "c:\jenkins\workspace\dsg_compose_1.29.2\venv\lib\site-packages\PyInstaller\loader\pyimod03_importers.py", line 493, in exec_module
+  File "docker\__init__.py", line 2, in <module>
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "c:\jenkins\workspace\dsg_compose_1.29.2\venv\lib\site-packages\PyInstaller\loader\pyimod03_importers.py", line 493, in exec_module
+  File "docker\api\__init__.py", line 2, in <module>
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "c:\jenkins\workspace\dsg_compose_1.29.2\venv\lib\site-packages\PyInstaller\loader\pyimod03_importers.py", line 493, in exec_module
+  File "docker\api\client.py", line 10, in <module>
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "c:\jenkins\workspace\dsg_compose_1.29.2\venv\lib\site-packages\PyInstaller\loader\pyimod03_importers.py", line 493, in exec_module
+  File "docker\auth.py", line 9, in <module>
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "c:\jenkins\workspace\dsg_compose_1.29.2\venv\lib\site-packages\PyInstaller\loader\pyimod03_importers.py", line 493, in exec_module
+  File "docker\utils\__init__.py", line 3, in <module>
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "c:\jenkins\workspace\dsg_compose_1.29.2\venv\lib\site-packages\PyInstaller\loader\pyimod03_importers.py", line 493, in exec_module
+  File "docker\utils\decorators.py", line 4, in <module>
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "c:\jenkins\workspace\dsg_compose_1.29.2\venv\lib\site-packages\PyInstaller\loader\pyimod03_importers.py", line 493, in exec_module
+  File "docker\utils\utils.py", line 11, in <module>
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "c:\jenkins\workspace\dsg_compose_1.29.2\venv\lib\site-packages\PyInstaller\loader\pyimod03_importers.py", line 493, in exec_module
+  File "docker\tls.py", line 5, in <module>
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "c:\jenkins\workspace\dsg_compose_1.29.2\venv\lib\site-packages\PyInstaller\loader\pyimod03_importers.py", line 493, in exec_module
+  File "docker\transport\__init__.py", line 5, in <module>
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "c:\jenkins\workspace\dsg_compose_1.29.2\venv\lib\site-packages\PyInstaller\loader\pyimod03_importers.py", line 493, in exec_module
+  File "docker\transport\npipeconn.py", line 6, in <module>
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "c:\jenkins\workspace\dsg_compose_1.29.2\venv\lib\site-packages\PyInstaller\loader\pyimod03_importers.py", line 493, in exec_module
+  File "docker\transport\npipesocket.py", line 7, in <module>
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 982, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 925, in _find_spec
+  File "<frozen importlib._bootstrap_external>", line 1349, in find_spec
+  File "<frozen importlib._bootstrap_external>", line 1321, in _get_spec
+  File "<frozen importlib._bootstrap_external>", line 1446, in find_spec
+  File "<frozen importlib._bootstrap_external>", line 87, in _path_stat
+KeyboardInterrupt
+[28928] Failed to execute script docker-compose
+
+C:\working\docker\UseCase3>docker-compose up -d
+ERROR: Service 'nginx' depends on service 'wordpress-fpm' which is undefined.
+
+C:\working\docker\UseCase3>docker-compose up -d
+ERROR: Service 'nginx' depends on service 'wordpress-fpm' which is undefined.
+
+C:\working\docker\UseCase3>docker-compose up -d
+Creating network "usecase3_default" with the default driver
+Creating volume "usecase3_db_data" with default driver
+Pulling wordpress-fpm (wordpress:5-fpm-alpine)...
+5-fpm-alpine: Pulling from library/wordpress
+df9b9388f04a: Pulling fs layer
+df9b9388f04a: Downloading [>                                                  ]   29.4kB/2.815MBing [==========================>                    a60f85627e3d: Downloading [>                                              df9b9388f04a: Downloading [====>                                              ]  233.4kB/2.815MBing [===============================================df9b9388f04a: Downloading [======>                                            ]    376kB/2.815MB
+df9b9388f04a: Downloading [=========>                                         ]  511.2kB/2.815MB
+df9b9388f04a: Downloading [===========>                                       ]  658.7kB/2.815MB
+df9b9388f04a: Downloading [======================>                            ]  1.276MB/2.815MB
+df9b9388f04a: Downloading [=========================>                         ]  1.407MB/2.815MBfs layer
+df9b9388f04a: Downloading [=============================>                 df9b9388f04a: Downloading [====================================>              ]  2.071MB/2.815MB
+a60f85627e3d: Downloading [===========================>                   df9b9388f04a: Downloading [=======================================>           ]   2.21MB/2.815MB
+df9b9388f04a: Downloading [=========================================>         ]  2.341MB/2.815MB complete
+df9b9388f04a: Downloading [===============================================df9b9388f04a: Extracting [>                                                  ]  32.77kB/2.815MB
+df9b9388f04a: Extracting [==========================================>     df9b9388f04a: Extracting [================================================df9b9388f04a: Extracting [================================================df9b9388f04a: Pull complete
+a60f85627e3d: Downloading [============================================>  a60f85627e3d: Downloading [===============================================>   ]  1.621MB/1.701MB
+a60f85627e3d: Downloading [===============================================a60f85627e3d: Extracting [>                                               a60f85627e3d: Extracting [================================================a60f85627e3d: Extracting [================================================a60f85627e3d: Pull complete
+89395091f295: Extracting [================================================89395091f295: Extracting [==================================================>]   1.26kB/1.26kB
+89395091f295: Pull complete
+2342a00f1dee: Extracting [================================================2342a00f1dee: Extracting [================================================2342a00f1dee: Pull complete
+e48d140dbee0: Downloading [=====>                                         e48d140dbee0: Downloading [======>                                        e48d140dbee0: Downloading [==========>                                        ]  2.286MB/10.44MB
+e48d140dbee0: Downloading [=============>                                 e48d140dbee0: Downloading [================>                              e48d140dbee0: Downloading [==================>                            e48d140dbee0: Downloading [===================>                           e48d140dbee0: Downloading [=======================>                           ]   4.81MB/10.44MB
+e48d140dbee0: Downloading [========================>                      e48d140dbee0: Downloading [==========================>                        ]  5.498MB/10.44MB
+
+e48d140dbee0: Downloading [===========================>                   e48d140dbee0: Downloading [============================>                      ]  5.952MB/10.44MB
+
+e48d140dbee0: Downloading [==============================>                e48d140dbee0: Downloading [==============================>                    ]  6.415MB/10.44MB
+e48d140dbee0: Downloading [================================>                  ]  6.866MB/10.44MBing [=====>                                             ]   1.16MB/11.51MB
+e48d140dbee0: Downloading [=================================>                 ]  7.095MB/10.44MBing [=======>                                       e48d140dbee0: Downloading [===================================>               ]  7.325MB/10.44MBing [=======>                                           ]  1.815MB/11.51MB
+e48d140dbee0: Downloading [====================================>          e48d140dbee0: Downloading [=====================================>             ]  7.783MB/10.44MB
+e48d140dbee0: Downloading [======================================>            ]  8.127MB/10.44MBing [==========>                                    e48d140dbee0: Downloading [=======================================>           ]  8.242MB/10.44MBing [============>                                  e48d140dbee0: Downloading [========================================>          ]  8.471MB/10.44MBing [============>                                  e48d140dbee0: Downloading [=========================================>         ]  8.701MB/10.44MBing [==============>                                e48d140dbee0: Downloading [==========================================>    e48d140dbee0: Downloading [==========================================>        ]   8.93MB/10.44MB
+e48d140dbee0: Downloading [===========================================>   e48d140dbee0: Downloading [============================================>      ]  9.266MB/10.44MB
+
+e48d140dbee0: Downloading [============================================>  e48d140dbee0: Downloading [=============================================>     ]  9.495MB/10.44MB
+e48d140dbee0: Downloading [==============================================>    ]   9.61MB/10.44MBing [===================>                               ]  4.552MB/11.51MB
+e48d140dbee0: Downloading [===============================================>   ]   9.84MB/10.44MBing [=====================>                             ]  4.933MB/11.51MB
+e48d140dbee0: Downloading [===============================================>   ]  9.954MB/10.44MB
+17d69dd58167: Downloading [=============>                                 e48d140dbee0: Downloading [================================================>  ]  10.07MB/10.44MBing [=======================>                           ]  5.326MB/11.51MB complete
+e48d140dbee0: Downloading [================================================>  ]  10.18MB/10.44MBing [========================>                      e48d140dbee0: Downloading [===============================================e48d140dbee0: Extracting [>                                               e48d140dbee0: Extracting [================================================e48d140dbee0: Pull complete
+c3f615370bed: Extracting [================================================c3f615370bed: Extracting [================================================c3f615370bed: Pull complete
+e912de62f780: Downloading [===========================>                   e912de62f780: Downloading [============================>                  e912de62f780: Downloading [=============================>                 e912de62f780: Downloading [==============================>                    ]  7.017MB/11.51MB
+
+e912de62f780: Downloading [===============================>               e912de62f780: Downloading [================================>              e912de62f780: Downloading [================================>              e912de62f780: Downloading [==================================>                ]  7.931MB/11.51MB
+e912de62f780: Downloading [===================================>           e912de62f780: Downloading [====================================>          e912de62f780: Downloading [=====================================>         e912de62f780: Downloading [========================================>      e912de62f780: Downloading [=========================================>     e912de62f780: Downloading [==========================================>    e912de62f780: Downloading [===========================================>       ]     10MB/11.51MB
+e912de62f780: Downloading [============================================>      ]  10.27MB/11.51MB
+
+e912de62f780: Downloading [==============================================>    ]  10.66MB/11.51MB
+e912de62f780: Downloading [===============================================>   ]  11.05MB/11.51MB
+e912de62f780: Downloading [================================================>  ]  11.18MB/11.51MB
+e912de62f780: Downloading [=================================================> ]  11.31MB/11.51MBing [=>                                                 ]  1.274MB/41.16MB
+e912de62f780: Downloading [=================================================> ]  11.42MB/11.51MBing [==>                                            e912de62f780: Extracting [>                                                  ]  131.1kB/11.51MBding [==>                                            e912de62f780: Extracting [================>                               e912de62f780: Extracting [===========================>                       ]  6.423MB/11.51MBB
+
+e912de62f780: Extracting [=================================>              e912de62f780: Extracting [============================================>   e912de62f780: Extracting [==================================================>]  11.51MB/11.51MBding [==>                                            e912de62f780: Pull complete
+17d69dd58167: Extracting [================================================17d69dd58167: Extracting [================================================17d69dd58167: Pull complete
+3a6883a9a310: Extracting [================================================3a6883a9a310: Extracting [================================================3a6883a9a310: Pull complete
+856907323251: Extracting [================================================856907323251: Extracting [================================================856907323251: Pull complete
+
+c0ab8227eb69: Downloading [======>                                        4914bd9c17f8: Downloading [===>                                               ]  2.552MB/41.16MB
+c0ab8227eb69: Downloading [==========>                                    c0ab8227eb69: Downloading [===========>                                   c0ab8227eb69: Downloading [===========>                                   c0ab8227eb69: Downloading [============>                                      ]  3.761MB/15.36MB
+7bccd2aa6c2c: Downloading [=>                                             c0ab8227eb69: Downloading [=============>                                 4914bd9c17f8: Downloading [===>                                               ]  2.978MB/41.16MB
+c0ab8227eb69: Downloading [===============>                               c0ab8227eb69: Downloading [================>                              c0ab8227eb69: Downloading [=================>                             4914bd9c17f8: Downloading [====>                                              ]  3.404MB/41.16MB
+c0ab8227eb69: Downloading [===================>                           c0ab8227eb69: Downloading [====================>                          c0ab8227eb69: Downloading [=====================>                         c0ab8227eb69: Downloading [======================>                        c0ab8227eb69: Downloading [=======================>                       c0ab8227eb69: Downloading [=========================>                     4914bd9c17f8: Downloading [====>                                              ]   3.83MB/41.16MB
+c0ab8227eb69: Downloading [==========================>                    c0ab8227eb69: Downloading [=============================>                 4914bd9c17f8: Downloading [=====>                                             ]  4.256MB/41.16MB
+c0ab8227eb69: Downloading [===============================>               c0ab8227eb69: Downloading [=================================>             c0ab8227eb69: Downloading [===================================>           c0ab8227eb69: Downloading [====================================>          4914bd9c17f8: Downloading [=====>                                             ]  4.682MB/41.16MB
+c0ab8227eb69: Downloading [=======================================>       c0ab8227eb69: Downloading [========================================>      c0ab8227eb69: Downloading [==========================================>    4914bd9c17f8: Downloading [======>                                            ]  5.108MB/41.16MB
+c0ab8227eb69: Downloading [=============================================> c0ab8227eb69: Downloading [==============================================>4914bd9c17f8: Downloading [======>                                            ]  5.534MB/41.16MB
+4914bd9c17f8: Downloading [=======>                                       4914bd9c17f8: Downloading [=======>                                       4914bd9c17f8: Downloading [========>                                      4914bd9c17f8: Downloading [========>                                      4914bd9c17f8: Downloading [=========>                                         ]  7.664MB/41.16MB
+4914bd9c17f8: Downloading [=========>                                         ]   8.09MB/41.16MB
+
+41221f8b4e1b: Downloading [>                                              4914bd9c17f8: Downloading [==========>                                        ]  8.516MB/41.16MBing [=>                                             4914bd9c17f8: Downloading [==========>                                        ]  8.942MB/41.16MBing [===>                                               ]  1.151MB/18.55MB
+41221f8b4e1b: Downloading [====>                                          4914bd9c17f8: Downloading [===========>                                       ]   9.36MB/41.16MBing [======>                                        41221f8b4e1b: Downloading [=======>                                       4914bd9c17f8: Downloading [===========>                                       ]  9.786MB/41.16MB
+4914bd9c17f8: Downloading [============>                                      ]  10.21MB/41.16MBing [==========>                                        ]  4.076MB/18.55MB
+4914bd9c17f8: Downloading [============>                                      ]  10.64MB/41.16MB
+41221f8b4e1b: Downloading [=============>                                 4914bd9c17f8: Downloading [=============>                                     ]  11.06MB/41.16MB
+4914bd9c17f8: Downloading [=============>                                     ]  11.49MB/41.16MBing [===============>                               4914bd9c17f8: Downloading [==============>                                    ]  11.92MB/41.16MBing [================>                              4914bd9c17f8: Downloading [==============>                                    ]  12.34MB/41.16MBing [=================>                                 ]  6.628MB/18.55MB
+4914bd9c17f8: Downloading [===============>                                   ]  12.77MB/41.16MB
+4914bd9c17f8: Downloading [================>                                  ]  13.19MB/41.16MBing [===================>                               ]   7.41MB/18.55MB
+41221f8b4e1b: Downloading [=====================>                         4914bd9c17f8: Downloading [================>                                  ]  13.62MB/41.16MBing [=====================>                         4914bd9c17f8: Downloading [=================>                                 ]  14.04MB/41.16MBing [=======================>                           ]  8.578MB/18.55MB
+4914bd9c17f8: Downloading [=================>                                 ]  14.47MB/41.16MB
+4914bd9c17f8: Downloading [==================>                                ]  14.89MB/41.16MBing [=========================>                     4914bd9c17f8: Downloading [==================>                                ]  15.31MB/41.16MBing [==========================>                        ]   9.95MB/18.55MB
+4914bd9c17f8: Downloading [===================>                               ]  15.73MB/41.16MB
+4914bd9c17f8: Downloading [===================>                               ]  16.15MB/41.16MBing [=============================>                 4914bd9c17f8: Downloading [====================>                              ]  16.56MB/41.16MBing [==============================>                    ]  11.31MB/18.55MB
+4914bd9c17f8: Downloading [====================>                              ]  16.99MB/41.16MB
+41221f8b4e1b: Downloading [================================>              41221f8b4e1b: Downloading [=================================>             4914bd9c17f8: Downloading [=====================>                             ]  17.42MB/41.16MBing [==================================>            4914bd9c17f8: Downloading [=====================>                             ]  17.84MB/41.16MBing [====================================>              ]  13.48MB/18.55MB
+41221f8b4e1b: Downloading [=====================================>         4914bd9c17f8: Downloading [======================>                            ]  18.27MB/41.16MBing [======================================>        41221f8b4e1b: Downloading [========================================>      4914bd9c17f8: Downloading [======================>                            ]  18.69MB/41.16MB
+41221f8b4e1b: Downloading [=========================================>     4914bd9c17f8: Downloading [=======================>                           ]  19.12MB/41.16MB
+41221f8b4e1b: Downloading [============================================>  4914bd9c17f8: Downloading [=======================>                           ]  19.54MB/41.16MB
+4914bd9c17f8: Downloading [========================>                      4914bd9c17f8: Downloading [========================>                      4914bd9c17f8: Downloading [=========================>                     4914bd9c17f8: Downloading [=========================>                     4914bd9c17f8: Downloading [==========================>                        ]  21.67MB/41.16MB
+
+4914bd9c17f8: Downloading [==========================>                    4914bd9c17f8: Downloading [===========================>                   4914bd9c17f8: Downloading [===========================>                   4914bd9c17f8: Downloading [============================>                  4914bd9c17f8: Downloading [=============================>                     ]  24.22MB/41.16MB complete
+4914bd9c17f8: Downloading [==============================>                    ]  25.06MB/41.16MB
+4914bd9c17f8: Downloading [===============================>               4914bd9c17f8: Downloading [================================>              4914bd9c17f8: Downloading [================================>              4914bd9c17f8: Downloading [==================================>            4914bd9c17f8: Downloading [==================================>            4914bd9c17f8: Downloading [===================================>           4914bd9c17f8: Downloading [====================================>          4914bd9c17f8: Downloading [====================================>          4914bd9c17f8: Downloading [=====================================>         4914bd9c17f8: Downloading [======================================>        4914bd9c17f8: Downloading [======================================>        4914bd9c17f8: Downloading [=======================================>       4914bd9c17f8: Downloading [========================================>      4914bd9c17f8: Downloading [=========================================>     4914bd9c17f8: Downloading [==========================================>    4914bd9c17f8: Downloading [==========================================>    4914bd9c17f8: Downloading [===========================================>   4914bd9c17f8: Downloading [============================================>  4914bd9c17f8: Downloading [=============================================> 4914bd9c17f8: Downloading [==============================================>4914bd9c17f8: Downloading [==============================================>4914bd9c17f8: Downloading [===============================================4914bd9c17f8: Downloading [===============================================4914bd9c17f8: Downloading [===============================================4914bd9c17f8: Downloading [===============================================4914bd9c17f8: Downloading [===============================================4914bd9c17f8: Extracting [>                                               4914bd9c17f8: Extracting [=====>                                          4914bd9c17f8: Extracting [=======>                                        4914bd9c17f8: Extracting [==========>                                     4914bd9c17f8: Extracting [===============>                                4914bd9c17f8: Extracting [====================>                           4914bd9c17f8: Extracting [=========================>                      4914bd9c17f8: Extracting [===========================>                    4914bd9c17f8: Extracting [================================>               4914bd9c17f8: Extracting [====================================>           4914bd9c17f8: Extracting [========================================>       4914bd9c17f8: Extracting [===============================================>4914bd9c17f8: Extracting [================================================4914bd9c17f8: Extracting [================================================4914bd9c17f8: Pull complete
+c0ab8227eb69: Extracting [>                                               c0ab8227eb69: Extracting [=============>                                  c0ab8227eb69: Extracting [===========================>                    c0ab8227eb69: Extracting [======================================>         c0ab8227eb69: Extracting [================================================c0ab8227eb69: Extracting [================================================c0ab8227eb69: Pull complete
+7bccd2aa6c2c: Extracting [=========================>                      7bccd2aa6c2c: Extracting [================================================7bccd2aa6c2c: Extracting [================================================7bccd2aa6c2c: Pull complete
+d720abc3fbf4: Pull complete
+41221f8b4e1b: Extracting [>                                               41221f8b4e1b: Extracting [=====>                                          41221f8b4e1b: Extracting [=======================>                        41221f8b4e1b: Extracting [===========================>                    41221f8b4e1b: Extracting [================================>               41221f8b4e1b: Extracting [=======================================>        41221f8b4e1b: Extracting [============================================>   41221f8b4e1b: Extracting [================================================41221f8b4e1b: Extracting [================================================41221f8b4e1b: Pull complete
+4c9001de9e05: Extracting [================================================4c9001de9e05: Extracting [================================================4c9001de9e05: Pull complete
+a9a8163cf47a: Extracting [================================================a9a8163cf47a: Extracting [================================================a9a8163cf47a: Pull complete
+Digest: sha256:8807621864e8b465d722cc70aed8658f17792d0052e5571e7aa31bad5955b933
+Status: Downloaded newer image for wordpress:5-fpm-alpine
+Pulling nginx (nginx:alpine)...
+alpine: Pulling from library/nginx
+2408cc74d12b: Downloading [>                                                  ]  28.75kB/2.799MBfs layer
+dd61fcc63eac: Downloading [>                                              2408cc74d12b: Downloading [===>                                               ]  205.1kB/2.799MBing [===============================================2408cc74d12b: Downloading [=======>                                           ]  440.7kB/2.799MB
+2408cc74d12b: Downloading [=============>                                     ]  735.6kB/2.799MB
+dd61fcc63eac: Downloading [===>                                           2408cc74d12b: Downloading [================>                                  ]  899.5kB/2.799MB
+2408cc74d12b: Downloading [============================>                      ]  1.588MB/2.799MB
+dd61fcc63eac: Downloading [=========>                                     2408cc74d12b: Downloading [===================================>               ]  1.981MB/2.799MB
+2408cc74d12b: Downloading [==========================================>    2408cc74d12b: Downloading [================================================>  ]  2.734MB/2.799MB
+2408cc74d12b: Extracting [>                                               2408cc74d12b: Extracting [===========================================>       ]  2.458MB/2.799MB
+2408cc74d12b: Extracting [================================================2408cc74d12b: Pull complete
+dd61fcc63eac: Downloading [==================>                            dd61fcc63eac: Downloading [======================>                        dd61fcc63eac: Downloading [=======================>                           ]    3.5MB/7.376MB
+
+dd61fcc63eac: Downloading [=========================>                     dd61fcc63eac: Downloading [===========================>                   dd61fcc63eac: Downloading [=============================>                 dd61fcc63eac: Downloading [===============================>               dd61fcc63eac: Downloading [=================================>             dd61fcc63eac: Downloading [====================================>              ]  5.397MB/7.376MB
+
+dd61fcc63eac: Downloading [=======================================>       dd61fcc63eac: Downloading [========================================>      dd61fcc63eac: Downloading [===========================================>   dd61fcc63eac: Downloading [=============================================> dd61fcc63eac: Downloading [===============================================dd61fcc63eac: Extracting [>                                               dd61fcc63eac: Extracting [=======================>                        dd61fcc63eac: Extracting [==============================================> dd61fcc63eac: Extracting [================================================dd61fcc63eac: Pull complete
+f9686e628075: Extracting [================================================f9686e628075: Extracting [================================================f9686e628075: Pull complete
+ceb5504faee7: Pull complete
+ce5d272a5b4f: Extracting [================================================ce5d272a5b4f: Extracting [================================================ce5d272a5b4f: Pull complete
+136e07b65aca: Extracting [================================================136e07b65aca: Extracting [================================================136e07b65aca: Pull complete
+Digest: sha256:8e38930f0390cbd79b2d1528405fb17edcda5f4a30875ecf338ebaa598dc994e
+Status: Downloaded newer image for nginx:alpine
+Creating wpgains-demo-db ... error
+
+ERROR: for wpgains-demo-db  Cannot create container for service db: Conflict. The container name "/wpgains-demo-db" is already in use by container "597cf511b7d8908e622c946857f9d81a3eccb822a063f9da89f05a3d6a3462dc". You have to remove (or rename) that container to be able to reuse that name.
+
+ERROR: for db  Cannot create container for service db: Conflict. The container name "/wpgains-demo-db" is already in use by container "597cf511b7d8908e622c946857f9d81a3eccb822a063f9da89f05a3d6a3462dc". You have to remove (or rename) that container to be able to reuse that name.
+ERROR: Encountered errors while bringing up the project.
+
+C:\working\docker\UseCase3>docker ps
+CONTAINER ID   IMAGE                       COMMAND                  CREATED          STATUS          PORTS                             NAMES
+bf2f62a04520   phpmyadmin/phpmyadmin:4.7   "/run.sh phpmyadmin"     30 minutes ago   Up 29 minutes   9000/tcp, 0.0.0.0:12000->80/tcp   wpgains-demo-phpmyadmin
+26fba1ad21ef   wordpress:latest            "docker-entrypoint.s…"   30 minutes ago   Up 29 minutes   0.0.0.0:80->80/tcp                wpgains-demo-app
+597cf511b7d8   mariadb:10                  "docker-entrypoint.s…"   30 minutes ago   Up 30 minutes   3306/tcp                          wpgains-demo-db
+
+C:\working\docker\UseCase3>docker down
+docker: 'down' is not a docker command.
+See 'docker --help'
+
+C:\working\docker\UseCase3>docker-compose down
+Removing network usecase3_default
+
+C:\working\docker\UseCase3>docker ps
+CONTAINER ID   IMAGE                       COMMAND                  CREATED          STATUS          PORTS                             NAMES
+bf2f62a04520   phpmyadmin/phpmyadmin:4.7   "/run.sh phpmyadmin"     32 minutes ago   Up 32 minutes   9000/tcp, 0.0.0.0:12000->80/tcp   wpgains-demo-phpmyadmin
+26fba1ad21ef   wordpress:latest            "docker-entrypoint.s…"   32 minutes ago   Up 32 minutes   0.0.0.0:80->80/tcp                wpgains-demo-app
+597cf511b7d8   mariadb:10                  "docker-entrypoint.s…"   32 minutes ago   Up 32 minutes   3306/tcp                          wpgains-demo-db
+
+C:\working\docker\UseCase3>cd ..
+
+C:\working\docker>cd UseCase2
+
+C:\working\docker\UseCase2>docker-compose down
+Stopping wpgains-demo-phpmyadmin ... done
+Stopping wpgains-demo-app        ... done
+Stopping wpgains-demo-db         ... done
+Removing wpgains-demo-phpmyadmin ... done
+Removing wpgains-demo-app        ... done
+Removing wpgains-demo-db         ... done
+Removing network usecase2_default
+
+C:\working\docker\UseCase2>docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
+C:\working\docker\UseCase2>cd ..
+
+C:\working\docker>cd UseCase3
+
+C:\working\docker\UseCase3>docker-compose up -d
+Creating network "usecase3_default" with the default driver
+Creating wpgains-demo-db ... done
+Creating wpgains-demo-app ... done
+Creating wpgains-demo-nginx ... done
+
+C:\working\docker\UseCase3>docker ps
+CONTAINER ID   IMAGE                    COMMAND                  CREATED         STATUS         PORTS                  NAMES
+baea430fcf58   nginx:alpine             "/docker-entrypoint.…"   7 seconds ago   Up 5 seconds   0.0.0.0:8085->80/tcp   wpgains-demo-nginx
+906992dc9339   wordpress:5-fpm-alpine   "docker-entrypoint.s…"   8 seconds ago   Up 6 seconds   9000/tcp               wpgains-demo-app
+aeca42926bbe   mariadb:10               "docker-entrypoint.s…"   9 seconds ago   Up 7 seconds   3306/tcp               wpgains-demo-db
+
+C:\working\docker\UseCase3>docker-compose up -d
+wpgains-demo-db is up-to-date
+wpgains-demo-app is up-to-date
+Recreating wpgains-demo-nginx ... done
+
+C:\working\docker\UseCase3>docker ps
+CONTAINER ID   IMAGE                    COMMAND                  CREATED         STATUS         PORTS                NAMES
+c87cbc3c1b26   nginx:alpine             "/docker-entrypoint.…"   9 seconds ago   Up 8 seconds   0.0.0.0:90->80/tcp   wpgains-demo-nginx
+906992dc9339   wordpress:5-fpm-alpine   "docker-entrypoint.s…"   3 minutes ago   Up 3 minutes   9000/tcp             wpgains-demo-app
+aeca42926bbe   mariadb:10               "docker-entrypoint.s…"   3 minutes ago   Up 3 minutes   3306/tcp             wpgains-demo-db
+
+C:\working\docker\UseCase3>docker-compose up -d
+ERROR: Named volume "wp_files:/var/www/html:rw" is used in service "nginx" but no declaration was found in the volumes section.
+
+C:\working\docker\UseCase3>docker-compose down
+ERROR: Named volume "wp_files:/var/www/html:rw" is used in service "nginx" but no declaration was found in the volumes section.
+
+C:\working\docker\UseCase3>docker-compose down
+Stopping wpgains-demo-nginx ... done
+Stopping wpgains-demo-app   ... done
+Stopping wpgains-demo-db    ... done
+Removing wpgains-demo-nginx ... done
+Removing wpgains-demo-app   ... done
+Removing wpgains-demo-db    ... done
+Removing network usecase3_default
+
+C:\working\docker\UseCase3>docker-compose up -d
+ERROR: Named volume "wp_files:/var/www/html:rw" is used in service "nginx" but no declaration was found in the volumes section.
+
+C:\working\docker\UseCase3>docker-compose up -d
+Creating network "usecase3_default" with the default driver
+Creating volume "usecase3_wp_files" with default driver
+Creating wpgains-demo-db ... done
+Creating wpgains-demo-app ... done
+Creating wpgains-demo-nginx ... done
+
+C:\working\docker\UseCase3>docker ps
+CONTAINER ID   IMAGE                    COMMAND                  CREATED          STATUS          PORTS                  NAMES
+912a2d4c0a8b   nginx:alpine             "/docker-entrypoint.…"   13 minutes ago   Up 13 minutes   0.0.0.0:8085->80/tcp   wpgains-demo-nginx
+c72c20f4e528   wordpress:5-fpm-alpine   "docker-entrypoint.s…"   13 minutes ago   Up 13 minutes   9000/tcp               wpgains-demo-app
+baac36c081d4   mariadb:10               "docker-entrypoint.s…"   13 minutes ago   Up 13 minutes   3306/tcp               wpgains-demo-db
+
+C:\working\docker\UseCase3>docker container logs 912a2d4c0a8b
+/docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
+/docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
+/docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
+10-listen-on-ipv6-by-default.sh: info: /etc/nginx/conf.d/default.conf is not a file or does not exist
+/docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
+/docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
+/docker-entrypoint.sh: Configuration complete; ready for start up
+2022/07/02 12:10:28 [notice] 1#1: using the "epoll" event method
+2022/07/02 12:10:28 [notice] 1#1: nginx/1.23.0
+2022/07/02 12:10:28 [notice] 1#1: built by gcc 11.2.1 20220219 (Alpine 11.2.1_git20220219)
+2022/07/02 12:10:28 [notice] 1#1: OS: Linux 5.10.16.3-microsoft-standard-WSL2
+2022/07/02 12:10:28 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2022/07/02 12:10:28 [notice] 1#1: start worker processes
+2022/07/02 12:10:28 [notice] 1#1: start worker process 22
+2022/07/02 12:10:28 [notice] 1#1: start worker process 23
+2022/07/02 12:10:28 [notice] 1#1: start worker process 24
+2022/07/02 12:10:28 [notice] 1#1: start worker process 25
+2022/07/02 12:10:28 [notice] 1#1: start worker process 26
+2022/07/02 12:10:28 [notice] 1#1: start worker process 27
+2022/07/02 12:10:28 [notice] 1#1: start worker process 28
+2022/07/02 12:10:28 [notice] 1#1: start worker process 29
+
+C:\working\docker\UseCase3>docker ps
+CONTAINER ID   IMAGE                    COMMAND                  CREATED          STATUS          PORTS                  NAMES
+912a2d4c0a8b   nginx:alpine             "/docker-entrypoint.…"   15 minutes ago   Up 15 minutes   0.0.0.0:8085->80/tcp   wpgains-demo-nginx
+c72c20f4e528   wordpress:5-fpm-alpine   "docker-entrypoint.s…"   15 minutes ago   Up 15 minutes   9000/tcp               wpgains-demo-app
+baac36c081d4   mariadb:10               "docker-entrypoint.s…"   15 minutes ago   Up 15 minutes   3306/tcp               wpgains-demo-db
+
+C:\working\docker\UseCase3>cd ..
+
+C:\working\docker>mkdir UseCase4
+
+C:\working\docker>code .
+
+C:\working\docker>cd UseCase4
+
+C:\working\docker\UseCase4>docker-compose up -d
+Creating network "docker_default" with the default driver
+Building webserver
+[+] Building 0.1s (2/2) FINISHED
+ => [internal] load build definition from Dockerfile                 0.1s
+ => => transferring dockerfile: 2B                                   0.0s
+ => [internal] load .dockerignore                                    0.1s
+ => => transferring context: 2B                                      0.0s
+failed to solve with frontend dockerfile.v0: failed to read dockerfile: open /var/lib/docker/tmp/buildkit-mount197319780/Dockerfile: no such file or directory
+ERROR: Service 'webserver' failed to build : Build failed
+
+C:\working\docker\UseCase4>docker-compose up -d
+Building webserver
+[+] Building 0.0s (1/2)
+ => [internal] load build definition from Dockerfile                 0.0s
+ => => transferring dockerfile: 2B                                   0.0s
+failed to solve with frontend dockerfile.v0: failed to read dockerfile: open /var/lib/docker/tmp/buildkit-mount433835230/Dockerfile: no such file or directory
+ERROR: Service 'webserver' failed to build : Build failed
+
+[+] Building 0.0s (1/2)
+ => [internal] load build definition from Dockerfile                 0.0s
+ => => transferring dockerfile: 2B                                   0.0s
+failed to solve with frontend dockerfile.v0: failed to read dockerfile: open /var/lib/docker/tmp/buildkit-mount609068200/Dockerfile: no such file or directory
+ERROR: Service 'webserver' failed to build : Build failed
+
+C:\working\docker\UseCase4>dir
+ Volume in drive C is OS
+ Volume Serial Number is A2AD-EB3A
+
+ Directory of C:\working\docker\UseCase4
+
+02-07-2022  08:43 PM    <DIR>          .
+02-07-2022  08:43 PM    <DIR>          ..
+               0 File(s)              0 bytes
+               2 Dir(s)  105,715,806,208 bytes free
+
+[+] Building 139.9s (13/13) FINISHED
+ => [internal] load build definition from Dockerfile                 0.0s
+ => => transferring dockerfile: 438B                                 0.0s
+ => [internal] load .dockerignore                                    0.0s
+ => => transferring context: 2B                                      0.0s
+ => [internal] load metadata for docker.io/library/ubuntu:latest     4.5s
+ => [1/9] FROM docker.io/library/ubuntu:latest@sha256:b6b83d3c33179  0.1s
+ => => resolve docker.io/library/ubuntu:latest@sha256:b6b83d3c33179  0.0s
+ => => sha256:27941809078cc9b2802deb2b0bb6feed6c236 1.46kB / 1.46kB  0.0s
+ => => sha256:b6b83d3c331794420340093eb706a6f152d9c 1.42kB / 1.42kB  0.0s
+ => => sha256:bace9fb0d5923a675c894d5c815da75ffe35e2497 529B / 529B  0.0s
+ => [2/9] RUN apt-get update                                        53.3s
+ => [3/9] RUN apt-get install -y openssh-server                     77.1s
+ => [4/9] RUN mkdir -p /var/run/sshd                                 0.6s
+ => [5/9] RUN mkdir -p /home/dockertest                              0.6s
+ => [6/9] RUN useradd -d  /home/dockertest dockertest                0.6s
+ => [7/9] RUN chown dockertest /home/dockertest                      0.6s
+ => [8/9] RUN echo 'dockertest:P@$$w0rd' | chpasswd                  0.5s
+ => [9/9] RUN sed -i 's/PermitRootLogin prohibit-password/PermitRoo  0.6s
+ => exporting to image                                               1.2s
+ => => exporting layers                                              1.2s
+ => => writing image sha256:9754207f95a03ac49f2b8af5f4640f76c17ee02  0.0s
+ => => naming to docker.io/dockercompose/apache2:1.0                 0.0s
+
+Use 'docker scan' to run Snyk tests against images to find vulnerabilities and learn how to fix them
+WARNING: Image for service webserver was built because it did not already exist. To rebuild this image you must use `docker-compose build` or `docker-compose up --build`.
+Creating apache2 ... done
+
+C:\working\docker\UseCase4>docker ps
+CONTAINER ID   IMAGE                       COMMAND                  CREATED         STATUS         PORTS                          NAMES
+9b8448cdbf46   dockercompose/apache2:1.0   "/usr/sbin/sshd -D"      3 minutes ago   Up 3 minutes   22/tcp, 0.0.0.0:3308->80/tcp   apache2
+912a2d4c0a8b   nginx:alpine                "/docker-entrypoint.…"   8 hours ago     Up 8 hours     0.0.0.0:8085->80/tcp           wpgains-demo-nginx
+c72c20f4e528   wordpress:5-fpm-alpine      "docker-entrypoint.s…"   8 hours ago     Up 8 hours     9000/tcp                       wpgains-demo-app
+baac36c081d4   mariadb:10                  "docker-entrypoint.s…"   8 hours ago     Up 8 hours     3306/tcp                       wpgains-demo-db
+
+C:\working\docker\UseCase4>docker logs 9b8448cdbf46
+
+C:\working\docker\UseCase4>docker log 9b8448cdbf46
+docker: 'log' is not a docker command.
+See 'docker --help'
+
+C:\working\docker\UseCase4>docker logs 9b8448cdbf46
+
+C:\working\docker\UseCase4>docker scan
+Docker Scan relies upon access to Snyk, a third party provider, do you consent to proceed using Snyk? (y/N)
+y
+Usage:  docker scan [OPTIONS] IMAGE
+
+A tool to scan your images
+
+Options:
+      --accept-license    Accept using a third party scanning provider
+      --dependency-tree   Show dependency tree with scan results
+      --exclude-base      Exclude base image from vulnerability scanning
+                          (requires --file)
+  -f, --file string       Dockerfile associated with image, provides more
+                          detailed results
+      --group-issues      Aggregate duplicated vulnerabilities and group
+                          them to a single one (requires --json)
+      --json              Output results in JSON format
+      --login             Authenticate to the scan provider using an
+                          optional token (with --token), or web base
+                          token if empty
+      --reject-license    Reject using a third party scanning provider
+      --severity string   Only report vulnerabilities of provided level
+                          or higher (low|medium|high)
+      --token string      Authentication token to login to the third
+                          party scanning provider
+      --version           Display version of the scan plugin
+"docker scan" requires exactly 1 argument
+
+C:\working\docker\UseCase4>docker scan 9b8448cdbf46
+failed to get DockerScanID: You need to be logged in to Docker Hub to use scan feature.
+please login to Docker Hub using the Docker Login command
+
+C:\working\docker\UseCase4>

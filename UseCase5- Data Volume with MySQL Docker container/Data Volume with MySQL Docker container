@@ -1,0 +1,358 @@
+
+C:\working\docker\UseCase4>docker run -d -t dockercompose/apache2
+Unable to find image 'dockercompose/apache2:latest' locally
+docker: Error response from daemon: pull access denied for dockercompose/apache2, repository does not exist or may require 'docker login': denied: requested access to the resource is denied.
+See 'docker run --help'.
+
+C:\working\docker\UseCase4>docker run -d -t 9754207f95a0
+d2d61d34195846104019be306c0ae289c4547ebfdb7481049e04c9c37fb74cc5
+
+C:\working\docker\UseCase4>docker ps
+CONTAINER ID   IMAGE                       COMMAND                  CREATED          STATUS          PORTS                          NAMES
+d2d61d341958   9754207f95a0                "/usr/sbin/sshd -D"      27 seconds ago   Up 25 seconds   22/tcp                         goofy_poitras
+9b8448cdbf46   dockercompose/apache2:1.0   "/usr/sbin/sshd -D"      10 minutes ago   Up 10 minutes   22/tcp, 0.0.0.0:3308->80/tcp   apache2
+912a2d4c0a8b   nginx:alpine                "/docker-entrypoint.…"   8 hours ago      Up 8 hours      0.0.0.0:8085->80/tcp           wpgains-demo-nginx
+c72c20f4e528   wordpress:5-fpm-alpine      "docker-entrypoint.s…"   8 hours ago      Up 8 hours      9000/tcp                       wpgains-demo-app
+baac36c081d4   mariadb:10                  "docker-entrypoint.s…"   8 hours ago      Up 8 hours      3306/tcp                       wpgains-demo-db
+
+C:\working\docker\UseCase4>docker stop d2d61d341958
+d2d61d341958
+
+C:\working\docker\UseCase4>docker run -d -t -p 33009754207f95a0
+"docker run" requires at least 1 argument.
+See 'docker run --help'.
+
+Usage:  docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
+
+Run a command in a new container
+
+C:\working\docker\UseCase4>docker run -d -t -p 3300:80 9754207f95a0
+37a2ba7e270761ae482993a77b96f7b4e5359f537c2f4da965a87a2c0b307ec5
+
+C:\working\docker\UseCase4>docker ps
+CONTAINER ID   IMAGE                       COMMAND                  CREATED          STATUS          PORTS                          NAMES
+37a2ba7e2707   9754207f95a0                "/usr/sbin/sshd -D"      3 seconds ago    Up 2 seconds    22/tcp, 0.0.0.0:3300->80/tcp   quirky_ptolemy
+9b8448cdbf46   dockercompose/apache2:1.0   "/usr/sbin/sshd -D"      11 minutes ago   Up 11 minutes   22/tcp, 0.0.0.0:3308->80/tcp   apache2
+912a2d4c0a8b   nginx:alpine                "/docker-entrypoint.…"   8 hours ago      Up 8 hours      0.0.0.0:8085->80/tcp           wpgains-demo-nginx
+c72c20f4e528   wordpress:5-fpm-alpine      "docker-entrypoint.s…"   8 hours ago      Up 8 hours      9000/tcp                       wpgains-demo-app
+baac36c081d4   mariadb:10                  "docker-entrypoint.s…"   8 hours ago      Up 8 hours      3306/tcp                       wpgains-demo-db
+
+C:\working\docker\UseCase4>docker --version
+Docker version 20.10.14, build a224086
+
+C:\working\docker\UseCase4>docker-compose --version
+docker-compose version 1.29.2, build 5becea4c
+
+C:\working\docker\UseCase4>cd ..
+
+C:\working\docker>
+C:\working\docker>docker pull mysql/mysql-server:latest
+latest: Pulling from mysql/mysql-server
+1866ca302f77: Pull complete
+7208ad90232c: Pull complete
+b2d9c817f662: Pull complete
+3292176f57b6: Pull complete
+d77130a2f17e: Pull complete
+47bc31a509ca: Pull complete
+fade2a0af17d: Pull complete
+Digest: sha256:1a8d2a5584e53a42a43cbd430ae340a36942afee9e14a86624a2cb2d90ce655b
+Status: Downloaded newer image for mysql/mysql-server:latest
+docker.io/mysql/mysql-server:latest
+
+C:\working\docker>docker create -v /var/lib/mysql --name mysqldata mysql/mysql-server:latest
+b76018e6725fab598648e280c056937dbdc672019fe29f4c735eee20db0d764e
+
+C:\working\docker>docker -ps
+unknown shorthand flag: 'p' in -ps
+See 'docker --help'.
+
+Usage:  docker [OPTIONS] COMMAND
+
+A self-sufficient runtime for containers
+
+Options:
+      --config string      Location of client config files (default
+                           "C:\\Users\\naras\\.docker")
+  -c, --context string     Name of the context to use to connect to the
+                           daemon (overrides DOCKER_HOST env var and
+                           default context set with "docker context use")
+  -D, --debug              Enable debug mode
+  -H, --host list          Daemon socket(s) to connect to
+  -l, --log-level string   Set the logging level
+                           ("debug"|"info"|"warn"|"error"|"fatal")
+                           (default "info")
+      --tls                Use TLS; implied by --tlsverify
+      --tlscacert string   Trust certs signed only by this CA (default
+                           "C:\\Users\\naras\\.docker\\ca.pem")
+      --tlscert string     Path to TLS certificate file (default
+                           "C:\\Users\\naras\\.docker\\cert.pem")
+      --tlskey string      Path to TLS key file (default
+                           "C:\\Users\\naras\\.docker\\key.pem")
+      --tlsverify          Use TLS and verify the remote
+  -v, --version            Print version information and quit
+
+Management Commands:
+  builder     Manage builds
+  buildx*     Docker Buildx (Docker Inc., v0.8.2)
+  compose*    Docker Compose (Docker Inc., v2.5.0)
+  config      Manage Docker configs
+  container   Manage containers
+  context     Manage contexts
+  image       Manage images
+  manifest    Manage Docker image manifests and manifest lists
+  network     Manage networks
+  node        Manage Swarm nodes
+  plugin      Manage plugins
+  sbom*       View the packaged-based Software Bill Of Materials (SBOM) for an image (Anchore Inc., 0.6.0)
+  scan*       Docker Scan (Docker Inc., v0.17.0)
+  secret      Manage Docker secrets
+  service     Manage services
+  stack       Manage Docker stacks
+  swarm       Manage Swarm
+  system      Manage Docker
+  trust       Manage trust on Docker images
+  volume      Manage volumes
+
+Commands:
+  attach      Attach local standard input, output, and error streams to a running container
+  build       Build an image from a Dockerfile
+  commit      Create a new image from a container's changes
+  cp          Copy files/folders between a container and the local filesystem
+  create      Create a new container
+  diff        Inspect changes to files or directories on a container's filesystem
+  events      Get real time events from the server
+  exec        Run a command in a running container
+  export      Export a container's filesystem as a tar archive
+  history     Show the history of an image
+  images      List images
+  import      Import the contents from a tarball to create a filesystem image
+  info        Display system-wide information
+  inspect     Return low-level information on Docker objects
+  kill        Kill one or more running containers
+  load        Load an image from a tar archive or STDIN
+  login       Log in to a Docker registry
+  logout      Log out from a Docker registry
+  logs        Fetch the logs of a container
+  pause       Pause all processes within one or more containers
+  port        List port mappings or a specific mapping for the container
+  ps          List containers
+  pull        Pull an image or a repository from a registry
+  push        Push an image or a repository to a registry
+  rename      Rename a container
+  restart     Restart one or more containers
+  rm          Remove one or more containers
+  rmi         Remove one or more images
+  run         Run a command in a new container
+  save        Save one or more images to a tar archive (streamed to STDOUT by default)
+  search      Search the Docker Hub for images
+  start       Start one or more stopped containers
+  stats       Display a live stream of container(s) resource usage statistics
+  stop        Stop one or more running containers
+  tag         Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
+  top         Display the running processes of a container
+  unpause     Unpause all processes within one or more containers
+  update      Update configuration of one or more containers
+  version     Show the Docker version information
+  wait        Block until one or more containers stop, then print their exit codes
+
+Run 'docker COMMAND --help' for more information on a command.
+
+To get more help with docker, check out our guides at https://docs.docker.com/go/guides/
+
+
+C:\working\docker>docker ps -a
+CONTAINER ID   IMAGE                       COMMAND                  CREATED          STATUS                      PORTS                          NAMES
+b76018e6725f   mysql/mysql-server:latest   "/entrypoint.sh mysq…"   48 seconds ago   Created                                                    mysqldata
+37a2ba7e2707   9754207f95a0                "/usr/sbin/sshd -D"      27 minutes ago   Up 27 minutes               22/tcp, 0.0.0.0:3300->80/tcp   quirky_ptolemy
+d2d61d341958   9754207f95a0                "/usr/sbin/sshd -D"      29 minutes ago   Exited (0) 28 minutes ago                                  goofy_poitras
+9b8448cdbf46   dockercompose/apache2:1.0   "/usr/sbin/sshd -D"      39 minutes ago   Up 39 minutes               22/tcp, 0.0.0.0:3308->80/tcp   apache2
+912a2d4c0a8b   nginx:alpine                "/docker-entrypoint.…"   8 hours ago      Up 8 hours                  0.0.0.0:8085->80/tcp           wpgains-demo-nginx
+c72c20f4e528   wordpress:5-fpm-alpine      "docker-entrypoint.s…"   8 hours ago      Up 8 hours                  9000/tcp                       wpgains-demo-app
+baac36c081d4   mariadb:10                  "docker-entrypoint.s…"   8 hours ago      Up 8 hours                  3306/tcp                       wpgains-demo-db
+022303e2a507   nginx                       "/docker-entrypoint.…"   3 weeks ago      Exited (0) 10 hours ago                                    gallant_meitner
+dbc998f58dc6   nginx02:v1                  "/docker-entrypoint.…"   6 weeks ago      Exited (0) 10 hours ago                                    mynginx1
+52548f5dc84b   7425d3a7c478                "/docker-entrypoint.…"   6 weeks ago      Exited (0) 6 weeks ago                                     nginx01
+
+C:\working\docker>docker create -v /var/lib/mysql --name mysqldata mysql/m
+ysql-server:latest
+C:\working\docker>docker run -p 3333:3307 -d -e MYSQL_ROOT_PASSWORD=root --volumes-from mysqldata --name=mysqldb mysql/mysql-server:latest
+c610422497ed08a9200f60bc977004943291e4c8c54aa9a68b876a65d11abd8d
+
+C:\working\docker>docker ps
+CONTAINER ID   IMAGE                       COMMAND                  CREATED          STATUS                             PORTS                                               NAMES
+c610422497ed   mysql/mysql-server:latest   "/entrypoint.sh mysq…"   11 seconds ago   Up 10 seconds (health: starting)   3306/tcp, 33060-33061/tcp, 0.0.0.0:3333->3307/tcp   mysqldb
+37a2ba7e2707   9754207f95a0                "/usr/sbin/sshd -D"      29 minutes ago   Up 29 minutes                      22/tcp, 0.0.0.0:3300->80/tcp                        quirky_ptolemy
+9b8448cdbf46   dockercompose/apache2:1.0   "/usr/sbin/sshd -D"      40 minutes ago   Up 40 minutes                      22/tcp, 0.0.0.0:3308->80/tcp                        apache2
+912a2d4c0a8b   nginx:alpine                "/docker-entrypoint.…"   9 hours ago      Up 9 hours                         0.0.0.0:8085->80/tcp                                wpgains-demo-nginx
+c72c20f4e528   wordpress:5-fpm-alpine      "docker-entrypoint.s…"   9 hours ago      Up 9 hours                         9000/tcp                                            wpgains-demo-app
+baac36c081d4   mariadb:10                  "docker-entrypoint.s…"   9 hours ago      Up 9 hours                         3306/tcp                                            wpgains-demo-db
+
+C:\working\docker>docker exec -it mysqld bash
+Error: No such container: mysqld
+
+C:\working\docker>docker exec -it mysqldb bash
+bash-4.4# mysql -uroot -p
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 9
+Server version: 8.0.29 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2022, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases
+    -> ;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.00 sec)
+
+mysql> create database mydb;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mydb               |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.00 sec)
+
+mysql> exit
+Bye
+bash-4.4# df -h
+Filesystem      Size  Used Avail Use% Mounted on
+overlay         251G  4.2G  234G   2% /
+tmpfs            64M     0   64M   0% /dev
+tmpfs           6.2G     0  6.2G   0% /sys/fs/cgroup
+shm              64M     0   64M   0% /dev/shm
+/dev/sdc        251G  4.2G  234G   2% /etc/hosts
+tmpfs           6.2G     0  6.2G   0% /proc/acpi
+tmpfs           6.2G     0  6.2G   0% /sys/firmware
+bash-4.4# exit
+exit
+
+C:\working\docker>docker create -v /data01/mysql --name mysqldata mysql/mysql-server:latest
+Error response from daemon: Conflict. The container name "/mysqldata" is already in use by container "b76018e6725fab598648e280c056937dbdc672019fe29f4c735eee20db0d764e". You have to remove (or rename) that container to be able to reuse that name.
+
+C:\working\docker>docker create -v /data01/mysql --name mysqldata01 mysql/mysql-server:latest
+fdcfcdf261f62aff1858c6d0336ae12f4321f2f9a62660aa25bc54417256dabe
+
+C:\working\docker>docker run -p 3333:3307 -d -e MYSQL_ROOT_PASSWORD=root --volumes-from mysqldata01 --name=mysqldb01 mysql/mysql-server:latest
+3690d45b11ca5326fd6a239bbeeae203fbf8c35a9061da7b073f53e72d1f3700
+docker: Error response from daemon: driver failed programming external connectivity on endpoint mysqldb01 (03dd38be16ca766a7bff653f79deaa1cc62c9b7055cec52b8f2683e57a57c768): Bind for 0.0.0.0:3333 failed: port is already allocated.
+
+C:\working\docker>docker run -p 3334:3307 -d -e MYSQL_ROOT_PASSWORD=root --volumes-from mysqldata01 --name=mysqldb01 mysql/mysql-server:latest
+docker: Error response from daemon: Conflict. The container name "/mysqldb01" is already in use by container "3690d45b11ca5326fd6a239bbeeae203fbf8c35a9061da7b073f53e72d1f3700". You have to remove (or rename) that container to be able to reuse that name.
+See 'docker run --help'.
+
+C:\working\docker>docker ps
+CONTAINER ID   IMAGE                       COMMAND                  CREATED          STATUS                   PORTS                                               NAMES
+c610422497ed   mysql/mysql-server:latest   "/entrypoint.sh mysq…"   3 minutes ago    Up 3 minutes (healthy)   3306/tcp, 33060-33061/tcp, 0.0.0.0:3333->3307/tcp   mysqldb
+37a2ba7e2707   9754207f95a0                "/usr/sbin/sshd -D"      32 minutes ago   Up 32 minutes            22/tcp, 0.0.0.0:3300->80/tcp                        quirky_ptolemy
+9b8448cdbf46   dockercompose/apache2:1.0   "/usr/sbin/sshd -D"      43 minutes ago   Up 43 minutes            22/tcp, 0.0.0.0:3308->80/tcp                        apache2
+912a2d4c0a8b   nginx:alpine                "/docker-entrypoint.…"   9 hours ago      Up 9 hours               0.0.0.0:8085->80/tcp                                wpgains-demo-nginx
+c72c20f4e528   wordpress:5-fpm-alpine      "docker-entrypoint.s…"   9 hours ago      Up 9 hours               9000/tcp                                            wpgains-demo-app
+baac36c081d4   mariadb:10                  "docker-entrypoint.s…"   9 hours ago      Up 9 hours               3306/tcp                                            wpgains-demo-db
+
+C:\working\docker>docker container stop c610422497ed
+c610422497ed
+
+C:\working\docker>docker run -p 3334:3307 -d -e MYSQL_ROOT_PASSWORD=root --volumes-from mysqldata01 --name=mysqldb01 mysql/mysql-server:latest
+docker: Error response from daemon: Conflict. The container name "/mysqldb01" is already in use by container "3690d45b11ca5326fd6a239bbeeae203fbf8c35a9061da7b073f53e72d1f3700". You have to remove (or rename) that container to be able to reuse that name.
+See 'docker run --help'.
+
+C:\working\docker>docker ps
+CONTAINER ID   IMAGE                       COMMAND                  CREATED          STATUS          PORTS                          NAMES
+37a2ba7e2707   9754207f95a0                "/usr/sbin/sshd -D"      33 minutes ago   Up 33 minutes   22/tcp, 0.0.0.0:3300->80/tcp   quirky_ptolemy
+9b8448cdbf46   dockercompose/apache2:1.0   "/usr/sbin/sshd -D"      44 minutes ago   Up 44 minutes   22/tcp, 0.0.0.0:3308->80/tcp   apache2
+912a2d4c0a8b   nginx:alpine                "/docker-entrypoint.…"   9 hours ago      Up 9 hours      0.0.0.0:8085->80/tcp           wpgains-demo-nginx
+c72c20f4e528   wordpress:5-fpm-alpine      "docker-entrypoint.s…"   9 hours ago      Up 9 hours      9000/tcp                       wpgains-demo-app
+baac36c081d4   mariadb:10                  "docker-entrypoint.s…"   9 hours ago      Up 9 hours      3306/tcp                       wpgains-demo-db
+
+C:\working\docker>docker run -p 3333:3307 -d -e MYSQL_ROOT_PASSWORD=root --volumes-from mysqldata01 --name=mysqldb01 mysql/mysql-server:latest
+docker: Error response from daemon: Conflict. The container name "/mysqldb01" is already in use by container "3690d45b11ca5326fd6a239bbeeae203fbf8c35a9061da7b073f53e72d1f3700". You have to remove (or rename) that container to be able to reuse that name.
+See 'docker run --help'.
+
+C:\working\docker>docker run -p 3333:3307 -d -e MYSQL_ROOT_PASSWORD=root --volumes-from mysqldata01 --name=mysqldb07 mysql/mysql-server:latest
+7d5fb09a146f388eebd7fc07b079b16714ec0815f8e53ee869f52053b32cddd4
+
+C:\working\docker>docker ps
+CONTAINER ID   IMAGE                       COMMAND                  CREATED          STATUS                            PORTS                                               NAMES
+7d5fb09a146f   mysql/mysql-server:latest   "/entrypoint.sh mysq…"   3 seconds ago    Up 2 seconds (health: starting)   3306/tcp, 33060-33061/tcp, 0.0.0.0:3333->3307/tcp   mysqldb07
+37a2ba7e2707   9754207f95a0                "/usr/sbin/sshd -D"      34 minutes ago   Up 34 minutes                     22/tcp, 0.0.0.0:3300->80/tcp                        quirky_ptolemy
+9b8448cdbf46   dockercompose/apache2:1.0   "/usr/sbin/sshd -D"      45 minutes ago   Up 45 minutes                     22/tcp, 0.0.0.0:3308->80/tcp                        apache2
+912a2d4c0a8b   nginx:alpine                "/docker-entrypoint.…"   9 hours ago      Up 9 hours                        0.0.0.0:8085->80/tcp                                wpgains-demo-nginx
+c72c20f4e528   wordpress:5-fpm-alpine      "docker-entrypoint.s…"   9 hours ago      Up 9 hours                        9000/tcp                                            wpgains-demo-app
+baac36c081d4   mariadb:10                  "docker-entrypoint.s…"   9 hours ago      Up 9 hours                        3306/tcp                                            wpgains-demo-db
+
+C:\working\docker>docker exec -it mysqldb07 bash
+bash-4.4#
+bash-4.4#
+bash-4.4#
+bash-4.4# df -h
+Filesystem      Size  Used Avail Use% Mounted on
+overlay         251G  4.4G  234G   2% /
+tmpfs            64M     0   64M   0% /dev
+tmpfs           6.2G     0  6.2G   0% /sys/fs/cgroup
+shm              64M     0   64M   0% /dev/shm
+/dev/sdc        251G  4.4G  234G   2% /data01/mysql
+tmpfs           6.2G     0  6.2G   0% /proc/acpi
+tmpfs           6.2G     0  6.2G   0% /sys/firmware
+bash-4.4# cd /
+bash-4.4# df -h
+Filesystem      Size  Used Avail Use% Mounted on
+overlay         251G  4.4G  234G   2% /
+tmpfs            64M     0   64M   0% /dev
+tmpfs           6.2G     0  6.2G   0% /sys/fs/cgroup
+shm              64M     0   64M   0% /dev/shm
+/dev/sdc        251G  4.4G  234G   2% /data01/mysql
+tmpfs           6.2G     0  6.2G   0% /proc/acpi
+tmpfs           6.2G     0  6.2G   0% /sys/firmware
+bash-4.4# mysql
+ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+bash-4.4# mysql -uroot -p
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 11
+Server version: 8.0.29 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2022, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql>
+mysql>
+mysql>
+mysql>
+mysql> show databases
+    -> ;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.00 sec)
+
+mysql>
